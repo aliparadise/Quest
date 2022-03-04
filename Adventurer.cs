@@ -1,3 +1,5 @@
+using System;
+
 namespace Quest
 {
     // An instance of the Adventurer class is an object that will undergo some challenges
@@ -13,11 +15,22 @@ namespace Quest
         public int Awesomeness { get; set; }
 
         // A constructor to make a new Adventurer object with a given name
-        public Adventurer(string adventurerName)
+        //*added colorsOfTheRobe parameter and set the colorfulrobe property
+        public Adventurer(string adventurerName, Robe colorsOfTheRobe)
         {
             Name = adventurerName;
             Awesomeness = 50;
+            ColorfulRobe = colorsOfTheRobe;
         }
+        //*added immutible property ColorfulRobe to the Adventurer class with a type of Robe
+        public Robe ColorfulRobe { get; }
+
+        //method that returns a description of the adventurer
+        public string GetDescription()
+        {
+            return $"The Adventurer {Name} has a {String.Join(", ", ColorfulRobe.Colors)} robe that is {ColorfulRobe.Length} inches long.";
+        }
+
 
 
         // This method returns a string that describes the Adventurer's status
