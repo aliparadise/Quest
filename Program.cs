@@ -58,6 +58,13 @@ namespace Quest
                 favoriteBeatle
             };
 
+            //*variable of gameReplay to repeat challenges
+            bool gameReplay = true;
+
+            //*While loop to re-loop challenges when user answers yes
+            while (gameReplay)
+            {
+
             // Loop through all the challenges and subject the Adventurer to them
             foreach (Challenge challenge in challenges)
             {
@@ -77,6 +84,16 @@ namespace Quest
             else
             {
                 Console.WriteLine("I guess you did...ok? ...sorta. Still, you should get out of my sight.");
+            }
+            //*Phase3 Prompt to ask user to play again and used answer as variable
+            Console.WriteLine("Would you like to play again? y/n.");
+            string answer = Console.ReadLine();
+
+            //*Phase3 if statement to end the game
+                if (answer != "y")
+                {
+                    gameReplay = false;
+                }
             }
         }
     }
