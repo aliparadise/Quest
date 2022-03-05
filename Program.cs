@@ -19,6 +19,14 @@ namespace Quest
                 Colors = new List<string> {"Red", "Orange", "Yellow", "Green", "Blue", "Purple"},
                 Length = 56
             };
+
+            //New instantance of Hat and set properties. Ask for more detail about how this works?
+            //We are just hard coding the 2? We don't need the ShininessDescription because that is actually just a computed string for 
+            //the Shininess level?
+            Hat newHat = new Hat
+            {
+                ShininessLevel = 2
+            };
             // Create a few challenges for our Adventurer's quest
             // The "Challenge" Constructor takes three arguments
             //   the text of the challenge
@@ -53,7 +61,7 @@ namespace Quest
             // Make a new "Adventurer" object using the "Adventurer" class
             //*Phase2 - used name variable
             //*Phase4 - passed newRobe into the constructor of Adventurer
-            Adventurer theAdventurer = new Adventurer(name, newRobe);
+            Adventurer theAdventurer = new Adventurer(name, newRobe, newHat);
 
             Console.WriteLine(theAdventurer.GetDescription());
 
