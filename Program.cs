@@ -27,6 +27,9 @@ namespace Quest
             {
                 ShininessLevel = 2
             };
+
+            Prize newPrize = new Prize("You have won a golden potato!");
+            
             // Create a few challenges for our Adventurer's quest
             // The "Challenge" Constructor takes three arguments
             //   the text of the challenge
@@ -103,6 +106,10 @@ namespace Quest
             {
                 Console.WriteLine("I guess you did...ok? ...sorta. Still, you should get out of my sight.");
             }
+
+            //Phase6 call showprize method here.
+            newPrize.ShowPrize(theAdventurer);
+
             //*Phase3 Prompt to ask user to play again and used answer as variable
             Console.WriteLine("Would you like to play again? y/n.");
             string answer = Console.ReadLine();
